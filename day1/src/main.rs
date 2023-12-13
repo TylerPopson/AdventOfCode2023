@@ -16,11 +16,8 @@ fn main() {
         .replace("nine", "eight9eight");
 
         let parsed: Vec<&str> = replaced.matches(char::is_numeric).collect();
-        println!("{:?}", parsed);
         let numbers: Vec<u32> = parsed.iter().map(|&s| s.parse().unwrap()).collect();
-        println!("{:?}", numbers);
         let lin_num: u32 = (10*numbers[0])+numbers[numbers.len()-1];
-        println!("{}", lin_num);
         sum+=lin_num;
 
     }
